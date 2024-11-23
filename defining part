@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <webots/robot.h>
+#include <webots/motor.h>
+#include <webots/distance_sensor.h>
+#include <webots/light_sensor.h>
+#include <webots/gps.h>
+#include <webots/led.h>
+
+#define TIME_STEP 64       // Simulation time step in ms
+#define MAX_SPEED 6.28
+#define LIGHT_THRESHOLD 500.0
+#define WALL_THRESHOLD 100.0
+#define GPS_THRESHOLD 0.01 // Tolerance threshold for GPS comparison
+
