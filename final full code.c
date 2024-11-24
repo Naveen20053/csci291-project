@@ -88,9 +88,9 @@ int main(int argc, char **argv) {
         dead_end_positions[dead_end_index - 1][1] = gps_coords[1];
         dead_end_positions[dead_end_index - 1][2] = gps_coords[2];
 
-        printf("Dead end detected\n");
+        printf("Dead end is detected\n");
         printf("coordinates: x = %f, y = %f, z = %f\n", gps_coords[0], gps_coords[1], gps_coords[2]);
-        printf("LighT value: %f\n", light_readings[dead_end_index]);
+        printf("Light value: %f\n", light_readings[dead_end_index]);
 
       }
 
@@ -107,7 +107,7 @@ int main(int argc, char **argv) {
       if (fabs(gps_coords[0] - dead_end_positions[brightest_index - 1][0]) < GPS_TOLERANCE &&
           fabs(gps_coords[1] - dead_end_positions[brightest_index - 1][1]) < GPS_TOLERANCE &&
           fabs(gps_coords[2] - dead_end_positions[brightest_index - 1][2]) < GPS_TOLERANCE) {
-        printf("\n REACHED THE DEAD END wITH MAXIMUM INTENSITY!\n\n");
+        printf("\n REACHED THE DEAD END WITH MAXIMUM INTENSITY!\n\n");
      
         wb_motor_set_velocity(motor_left, 0);
         wb_motor_set_velocity(motor_right, 0);
