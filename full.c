@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <webots/robot.h>
 #include <webots/motor.h>
 #include <webots/distance_sensor.h>
@@ -89,9 +89,9 @@ int main(int argc, char **argv) {
         dead_end_positions[dead_end_index - 1][2] = gps_coords[2];
 
         printf("%d  ", dead_end_index);
-        printf("Dead end detected\n");
-        printf("Light sensor value: %f\n", light_readings[dead_end_index]);
-        printf("Dead-end coordinates: x = %f, y = %f, z = %f\n", gps_coords[0], gps_coords[1], gps_coords[2]);
+        printf("Dead end reached\n");
+        printf("Light sensor's value is: %f\n", light_readings[dead_end_index]);
+        printf("Deadend's coordinates: x = %f, y = %f, z = %f\n", gps_coords[0], gps_coords[1], gps_coords[2]);
       }
 
       if (dead_end_index == 10) {
@@ -101,8 +101,8 @@ int main(int argc, char **argv) {
             brightest_index = i;
           }
         }
-        printf("Maximum light intensity %f at dead end %d\n", highest_light, brightest_index);
-        printf("Coordinates of the brightest dead end: x = %f, y = %f, z = %f\n\n",
+        printf("Highest light intensity %f at dead end %d\n", highest_light, brightest_index);
+        printf("Coords of the brightest dead end is: x = %f, y = %f, z = %f\n\n",
                dead_end_positions[brightest_index - 1][0],
                dead_end_positions[brightest_index - 1][1],
                dead_end_positions[brightest_index - 1][2]);
@@ -112,7 +112,7 @@ int main(int argc, char **argv) {
       if (fabs(gps_coords[0] - dead_end_positions[brightest_index - 1][0]) < GPS_TOLERANCE &&
           fabs(gps_coords[1] - dead_end_positions[brightest_index - 1][1]) < GPS_TOLERANCE &&
           fabs(gps_coords[2] - dead_end_positions[brightest_index - 1][2]) < GPS_TOLERANCE) {
-        printf("\n\nSUCCESSFULLY REACHED THE BRIGHTEST DEAD END!\n\n");
+        printf("\n\nHave Reached the dead end successfully\n\n");
         WbDeviceTag led_array[7];
         char led_name[50];
         for (int i = 0; i < 7; i++) {
